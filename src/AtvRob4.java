@@ -5,7 +5,8 @@ public class AtvRob4 {
         //Faça um programa que solicita ao usuário um número inteiro positivo e, em seguida,
         //calcula e exibir o fatorial do número digitado.
 
-        int num,fat = 1;
+        int num;
+        long fat = 1;
         Scanner teclado = new Scanner(System.in);
         System.out.println("Digite o fatorial: ");
         num = teclado.nextInt();
