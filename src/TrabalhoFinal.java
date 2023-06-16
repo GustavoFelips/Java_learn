@@ -1,6 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+/**
+    @Autor: Gustavo Felipe.
+ */
 
 public class TrabalhoFinal {
     //Cadastrar Estudantes
@@ -38,18 +41,19 @@ public class TrabalhoFinal {
         int estAB = 0 , estCD = 0,estE = 0, estA = 0;
 
         while (opcao.equals("a")) {
-            while (estudantes <= 20) {
+            while (estudantes <= 2) {
                 System.out.print("Número de identificação: ");
                 id = teclado.nextInt();
-                System.out.print("\nNota 1 do aluno: ");
+
+                System.out.print("Nota 1 do aluno (0,0 a 10,0): ");
                 nota1 = teclado.nextFloat();
-                System.out.print("\nNota 2 do aluno: ");
+                System.out.print("Nota 2 do aluno (0,0 a 10,0): ");
                 nota2 = teclado.nextFloat();
-                System.out.print("\nNota 3 do aluno: ");
+                System.out.print("Nota 3 do aluno (0,0 a 10,0): ");
                 nota3 = teclado.nextFloat();
-                System.out.print("\nQual a média dos exercícios? ");
+                System.out.print("Qual a média dos exercícios? (0,0 a 10,0)");
                 media = teclado.nextFloat();
-                System.out.println("\n" + media);
+                System.out.println(" ");
                 estudantes++;
                 ma = ma(nota1, nota2, nota3, media);
                 conceito = tipo_aproveitamento(ma);
@@ -67,19 +71,16 @@ public class TrabalhoFinal {
             while (opcao.equals("a")) {
                 System.out.println("---------------------Menu-----------------------");
                 System.out.println("[a] Para cadastrar as médias dos 20 estudantes");
-                System.out.println("[b] Para apresentar o número de estudantes que tiveram o aproveitamento com conceitos\n" +
-                        "A e B.");
-                System.out.println("[c] Para apresentar o número de estudantes que tiveram o aproveitamento com conceitos\n" +
-                        "C e D.");
-                System.out.println("[d] para apresentar o número de estudantes que tiveram o aproveitamento com conceito\n" +
-                        "abaixo de D.");
-                System.out.println("[e] Para apresentar o número de estudantes que tiveram o aproveitamento com conceito\n" +
-                        "acima de B.");
+                System.out.println("[b] Para apresentar o número de estudantes que tiveram o aproveitamento com conceitos A e B.");
+                System.out.println("[c] Para apresentar o número de estudantes que tiveram o aproveitamento com conceitos C e D.");
+                System.out.println("[d] para apresentar o número de estudantes que tiveram o aproveitamento com conceito abaixo de D.");
+                System.out.println("[e] Para apresentar o número de estudantes que tiveram o aproveitamento com conceito acima de B.");
                 System.out.println("[f] Para sair do programa.");
                 System.out.print(": ");
                 opcao = teclado.next();
                 if (opcao.equals("a")) {
                     estudantes = 1;
+                    estAB = 0 ; estCD = 0; estE = 0; estA = 0;
                     break;
                 }
                 else if (opcao.equals("b")) {
@@ -104,6 +105,9 @@ public class TrabalhoFinal {
                 }
                 else if (opcao.equals("f")) {
                     break;
+                }
+                else {
+                    System.out.println("ERRO! Essa opção não existe.");
                 }
             }
 
