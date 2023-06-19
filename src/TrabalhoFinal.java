@@ -1,8 +1,6 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 /**
-    @Autor: Gustavo Felipe.
+    @Autores: Clara Oliveira, Gustavo Felipe, Helder Bernardo e Lucas Carneiro.
  */
 
 public class TrabalhoFinal {
@@ -90,7 +88,7 @@ public class TrabalhoFinal {
             }
             while (opcao.equals("a")) {
                 System.out.println("---------------------Menu-----------------------");
-                System.out.println("[a] Para cadastrar as médias dos 20 estudantes");
+                System.out.println("[a] Para cadastrar as médias dos estudantes");
                 System.out.println("[b] Para apresentar o número de estudantes que tiveram o aproveitamento com conceitos A e B.");
                 System.out.println("[c] Para apresentar o número de estudantes que tiveram o aproveitamento com conceitos C e D.");
                 System.out.println("[d] para apresentar o número de estudantes que tiveram o aproveitamento com conceito abaixo de D.");
@@ -101,7 +99,7 @@ public class TrabalhoFinal {
                 if (opcao.equals("a")) {
                     estudantes = 0; c = 0;
                     estAB = 0 ; estCD = 0; estE = 0; estA = 0;
-                    System.out.print("Digite a quantidade de alunos parra cadastrar as notas: ");
+                    System.out.print("Digite a quantidade de alunos para cadastrar as notas: ");
                     estudantes = teclado.nextInt();
                     break;
                 }
