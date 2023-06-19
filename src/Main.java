@@ -125,6 +125,7 @@ public class Main {
         */
         //Metódos
         //Procedimento
+        /*
         Scanner teclado = new Scanner(System.in);
         System.out.print("Digite o valor 1: ");
         int n1 = teclado.nextInt();
@@ -133,6 +134,11 @@ public class Main {
         soma(n1,n2);
         int s = somaF(n1,n2);
         System.out.println("Soma com função: "+s);
+         */
+        float nota1;
+
+        nota1 = nota(1);
+        System.out.println(nota1);
 
     }
     //Procedimento
@@ -142,5 +148,18 @@ public class Main {
     }
     private static int somaF(int a, int b){
         return (a+b);
+    }
+
+    public static Float nota(int ord){
+        Scanner teclado = new Scanner(System.in);
+        float nota;
+        System.out.printf("Nota %d do aluno (0,0 a 10,0): ",ord);
+        nota = teclado.nextFloat();
+        while (nota > 10 || nota < 0){
+            System.out.println("\nPor Favor, digite uma nota entre 0 e 10");
+            System.out.printf("Nota %d do aluno (0,0 a 10,0): ",ord);
+            nota = teclado.nextFloat();
+        }
+        return nota;
     }
 }

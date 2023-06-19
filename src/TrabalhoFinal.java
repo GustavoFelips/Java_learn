@@ -6,9 +6,31 @@ import java.util.Scanner;
  */
 
 public class TrabalhoFinal {
-    //Cadastrar Estudantes
-    public static void estudantes20(){
-
+    //Adicionar Notas
+    public static Float nota(int ord){
+        Scanner teclado = new Scanner(System.in);
+        float nota;
+        System.out.printf("Nota %d do aluno (0,0 a 10,0): ",ord);
+        nota = teclado.nextFloat();
+        while (nota > 10 || nota < 0){
+            System.out.println("\nPor Favor, digite uma nota entre 0 e 10");
+            System.out.printf("Nota %d do aluno (0,0 a 10,0): ",ord);
+            nota = teclado.nextFloat();
+        }
+        return nota;
+    }
+    //Adicionar médias
+    public static Float media() {
+        Scanner teclado = new Scanner(System.in);
+        float media;
+        System.out.print("Qual a média dos exercícios? (0,0 a 10,0): ");
+        media = teclado.nextFloat();
+        while (media > 10 || media < 0) {
+            System.out.println("\nPor Favor, digite uma nota entre 0 e 10");
+            System.out.print("Qual a média dos exercícios? (0,0 a 10,0): ");
+            media = teclado.nextFloat();
+        }
+        return media;
     }
     //Média de aprovetamento
     public static Float ma(float nota1,float nota2,float nota3, float ME){
@@ -34,27 +56,25 @@ public class TrabalhoFinal {
     public static void main(String[] args){
         String opcao = "a";
         Scanner teclado = new Scanner(System.in);
-        estudantes20();
         float nota1,nota2,nota3, media, ma;
         char conceito;
-        int estudantes = 1,id;
+        int estudantes = 0,id, c = 0;
         int estAB = 0 , estCD = 0,estE = 0, estA = 0;
 
+        System.out.print("Digite a quantidade de alunos para o cadastro: ");
+        estudantes = teclado.nextInt();
+
+
         while (opcao.equals("a")) {
-            while (estudantes <= 2) {
+            while (c < estudantes) {
                 System.out.print("Número de identificação: ");
                 id = teclado.nextInt();
-
-                System.out.print("Nota 1 do aluno (0,0 a 10,0): ");
-                nota1 = teclado.nextFloat();
-                System.out.print("Nota 2 do aluno (0,0 a 10,0): ");
-                nota2 = teclado.nextFloat();
-                System.out.print("Nota 3 do aluno (0,0 a 10,0): ");
-                nota3 = teclado.nextFloat();
-                System.out.print("Qual a média dos exercícios? (0,0 a 10,0)");
-                media = teclado.nextFloat();
+                nota1 = nota(1);
+                nota2 = nota(2);
+                nota3 = nota(3);
+                media = media();
                 System.out.println(" ");
-                estudantes++;
+                c++;
                 ma = ma(nota1, nota2, nota3, media);
                 conceito = tipo_aproveitamento(ma);
                 if (conceito == 'A' || conceito == 'B') {
@@ -79,8 +99,10 @@ public class TrabalhoFinal {
                 System.out.print(": ");
                 opcao = teclado.next();
                 if (opcao.equals("a")) {
-                    estudantes = 1;
+                    estudantes = 0; c = 0;
                     estAB = 0 ; estCD = 0; estE = 0; estA = 0;
+                    System.out.print("Digite a quantidade de alunos parra cadastrar as notas: ");
+                    estudantes = teclado.nextInt();
                     break;
                 }
                 else if (opcao.equals("b")) {
@@ -108,6 +130,7 @@ public class TrabalhoFinal {
                 }
                 else {
                     System.out.println("ERRO! Essa opção não existe.");
+                    opcao = "a";
                 }
             }
 
