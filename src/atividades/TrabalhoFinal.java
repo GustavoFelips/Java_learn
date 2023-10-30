@@ -1,3 +1,5 @@
+package atividades;
+
 import java.util.Scanner;
 /**
     @Autores: Clara Oliveira, Gustavo Felipe, Helder Bernardo e Lucas Carneiro.
