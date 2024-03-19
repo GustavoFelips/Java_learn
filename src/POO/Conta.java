@@ -1,12 +1,20 @@
 package POO;
 
 public class Conta {
+    private static int num = 0;
     private String titular;
-    private String numero;
+    private int numero;
     private double saldo;
     private double chequeEspecial;
 
-
+    public Conta(String titular, double saldo) {
+        this.titular = titular;
+        this.numero = ++num;
+        this.saldo = saldo;
+    }
+    public int getNum(){
+        return num;
+    }
     public String getTitular() {
         return titular;
     }
@@ -23,11 +31,11 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -47,7 +55,7 @@ public class Conta {
 
     public String toString(){
 
-        return String.format("Nome : %s \nNumero de Conta: %s \nSaldo:R$ %.2f",this.getTitular(),this.getNumero(),this.getSaldo());
+        return String.format("Nome : %s \nNumero de Conta: %s \nSaldo:R$ %.2f\n",this.getTitular(),this.getNumero(),this.getSaldo());
     }
 
     public boolean equals(Object o){
@@ -57,7 +65,7 @@ public class Conta {
             }
             if(o instanceof Conta){
                 Conta c = (Conta) o;
-                if (c.getNumero().equals(this.getNumero())){
+                if (c.getNumero() == (this.getNumero())){
                     return true;
                 }
             }

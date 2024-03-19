@@ -1,39 +1,44 @@
 package POO;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.Scanner;
 
 public class main {
-    public static void main(String[]args) throws ContaNaoEncontradaException {
-        /*ArrayList<Integer> numeros =  new ArrayList<>();
-        Random sc = new Random();
+    public void menu(){
+        String nome;
+        double saldo;
+        Scanner sc = new Scanner(System.in);
+        int op;
+        System.out.println("---------------MENU----------------");
+        System.out.println("0 - para sair\n2 - Para Adicionar Conta\n3 - Para Remover conta\n 4 - Para buscar uma conta");
+        op = sc.nextInt();
+        switch (op) {
+            case 0:
+                return;
+            case 1:
+                System.out.print("Nome : ");
+                nome = sc.nextLine();
+                System.out.print("Saldo: ");
+                saldo = sc.nextDouble();
+                //Conta c = new Conta(nome, saldo)
 
-        for (int i =0; i<10; i++){
-            numeros.add(sc.nextInt(30));
+            default:
+                break;
         }
 
-        System.out.println(numeros.size());*/
+    }
+    public static void main(String[]args) throws ContaNaoEncontradaException {
 
         Banco imobiliario = new Banco();
-        Conta c1= new Conta();
-        c1.setNumero("00001");
-        c1.setSaldo(20000);
-        c1.setTitular("guilherme henrique");
+        Conta c1= new Conta("Alice",20000);
         imobiliario.addConta(c1);
 
-        Conta c2= new Conta();
-        c2.setNumero("00002");
-        c2.setSaldo(10000);
-        c2.setTitular("lucas");
+        Conta c2 = new Conta("Bruno",2000);
         imobiliario.addConta(c2);
 
-        Conta c3= new Conta();
-        c3.setNumero("00002");
-        c3.setSaldo(10000);
-        c3.setTitular("lucas");
+        Conta c3 = new Conta("Clara",100);
         imobiliario.addConta(c3);
 
-        System.out.println(imobiliario.buscaContaPorNumero("00001"));
+        System.out.println(imobiliario.buscaContaPorTitular("Alice"));
 
     }
 }

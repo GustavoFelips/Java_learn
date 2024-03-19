@@ -26,9 +26,9 @@ public class Banco {
         this.contas.remove(conta);
     }
 
-    public Conta buscaContaPorNumero(String numero) throws ContaNaoEncontradaException {
+    public Conta buscaContaPorNumero(int numero) throws ContaNaoEncontradaException {
         for (Conta conta : this.contas) {
-            if (conta.getNumero().equals(numero)) {
+            if (conta.getNumero()==(numero)) {
                 return conta;
             }
         }
@@ -37,6 +37,15 @@ public class Banco {
     public Conta buscaConta(Conta conta) throws ContaNaoEncontradaException {
         if (this.contas.contains(conta)) {
             return conta;
+        }
+        throw new ContaNaoEncontradaException("Conta não encontrada");
+    }
+
+    public Conta buscaContaPorTitular(String nome) throws ContaNaoEncontradaException {
+        for (Conta conta : this.contas) {
+            if (conta.getTitular().equals(nome)) {
+                return conta;
+            }
         }
         throw new ContaNaoEncontradaException("Conta não encontrada");
     }
