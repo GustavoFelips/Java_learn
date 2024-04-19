@@ -1,10 +1,12 @@
 package Dados;
 import Classes.Conta;
+import Excecao.ExcecaoElementoInexistente;
 
 public interface IRepositorioConta {
-    public void inserirConta(Conta conta); //throws ExcecaoElementoJaExistente, ExcecaoRepositorio
-    public void alterarConta(Conta conta); //throwsExcecaoElementoInexistente, ExcecaoRepositorio;
-    public void removerConta(int numero); //throwsExcecaoElementoInexistente, ExcecaoRepositorio;
-    public Conta buscarAluno(int numero);// throwsExcecaoElementoInexistente, ExcecaoRepositorio;
-    public boolean verificarExistenciaAluno(int numero);
+    public void inserirConta(Conta conta);
+    public void alterarConta(String numero); 
+    public void removerConta(String numero);
+    public Conta buscarConta(String numero) throws ExcecaoElementoInexistente ;
+    public boolean verificarExistenciaConta(String numero) ;
+    public void mostrarContas();
 }
