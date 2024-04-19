@@ -9,6 +9,9 @@ public class Fachada {
     public void inserir(Conta c){
         this.controConta.inserir(c);
     }
+    public void alterarConta(Conta conta){
+        this.controConta.alterarConta(conta);
+    }
     public void mostrar(){
         this.controConta.mostrar();
     }

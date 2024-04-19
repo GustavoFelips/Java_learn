@@ -2,11 +2,10 @@ package Classes;
 
 public class Conta {
     private String titular;
-    private int numero;
+    private String numero;
     private double saldo;
-    private double chequeEspecial;
 
-    public Conta(String titular,int numero , double saldo) {
+    public Conta(String titular,String numero , double saldo) {
         this.titular = titular;
         this.numero = numero;
         this.saldo = saldo;
@@ -27,11 +26,11 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

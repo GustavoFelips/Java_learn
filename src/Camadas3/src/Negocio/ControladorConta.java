@@ -4,12 +4,15 @@ import Classes.Conta;
 import Dados.RepositorioConta;
 
 public class ControladorConta {
-    private RepositorioConta reposConra = new RepositorioConta();
+    private RepositorioConta reposConta = new RepositorioConta();
 
     public void inserir(Conta c){
-        this.reposConra.inserir(c);
+        this.reposConta.inserir(c);
+    }
+    public void alterarConta(Conta conta){
+        this.reposConta.alterarConta(conta);
     }
     public void mostrar(){
-        this.reposConra.mostrar();
+        this.reposConta.mostrar();
     }
 }
