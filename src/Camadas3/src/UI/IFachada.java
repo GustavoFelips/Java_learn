@@ -1,7 +1,7 @@
-package UI;
+package Camadas3.src.UI;
 
-import Classes.Conta;
-import Excecao.ExcecaoElementoInexistente;
+import Camadas3.src.Classes.Conta;
+import Camadas3.src.Excecao.ExcecaoElementoInexistente;
 
 public interface IFachada {
     public void inserirConta(Conta conta);

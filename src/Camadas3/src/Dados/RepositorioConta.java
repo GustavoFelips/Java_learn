@@ -1,10 +1,9 @@
-package Dados;
-
+package Camadas3.src.Dados;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Classes.Conta;
-import Excecao.ExcecaoElementoInexistente;
+import Camadas3.src.Classes.Conta;
+import Camadas3.src.Excecao.ExcecaoElementoInexistente;
 
 public class RepositorioConta implements IRepositorioConta{
     public ArrayList<Conta> contas;
@@ -22,10 +21,10 @@ public class RepositorioConta implements IRepositorioConta{
 
     public void alterarConta(String numero){
         for (Conta c : contas){
-            if (c.getNumero() == numero) {
+            if (c.getNumero().equals(numero)) {
                 //System.out.println("Novo número de conta: ");
                 //c.setNumero(sc.nextLine());
-                System.out.println("Novo nome de Titular: ");
+                System.out.print("Novo nome de Titular: ");
                 c.setTitular(sc.nextLine());
                 //System.out.println("Novo saldo");
                 //c.setSaldo(sc.nextDouble());
@@ -36,17 +35,16 @@ public class RepositorioConta implements IRepositorioConta{
     public void removerConta(String numero){
         if (this.verificarExistenciaConta(numero)) {
             for (Conta c : contas){
-                if (c.getNumero()==numero){
+                if (c.getNumero().equals(numero)){
                     this.contas.remove(c);
                 }
         }
-        
         }
     }
 
     public Conta buscarConta(String numero) throws ExcecaoElementoInexistente{
         for (Conta c : contas){
-            if (c.getNumero()==numero){
+            if (c.getNumero().equals(numero)){
                 return c;
             }
         }
@@ -54,7 +52,7 @@ public class RepositorioConta implements IRepositorioConta{
     }
     public boolean verificarExistenciaConta(String numero){
         for (Conta c : contas){
-            if (c.getNumero()==numero){
+            if (c.getNumero().equals(numero)){
                 return true;
             }
         }

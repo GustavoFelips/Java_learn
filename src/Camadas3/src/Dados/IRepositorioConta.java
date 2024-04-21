@@ -1,6 +1,6 @@
-package Dados;
-import Classes.Conta;
-import Excecao.ExcecaoElementoInexistente;
+package Camadas3.src.Dados;
+import Camadas3.src.Classes.Conta;
+import Camadas3.src.Excecao.ExcecaoElementoInexistente;
 
 public interface IRepositorioConta {
     public void inserirConta(Conta conta);

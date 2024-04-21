@@ -1,6 +1,6 @@
-package Negocio;
-import Classes.Conta;
-import Excecao.ExcecaoElementoInexistente;
+package Camadas3.src.Negocio;
+import Camadas3.src.Classes.Conta;
+import Camadas3.src.Excecao.ExcecaoElementoInexistente;
 
 public interface IControladorConta {
     public void inserirConta(Conta conta); //throws ExcecaoElementoJaExistente, ExcecaoRepositorio
