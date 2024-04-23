@@ -1,10 +1,10 @@
-package Camadas3.src;
+package Camadas3.src.GUI;
 
 import Camadas3.src.Classes.Conta;
 import Camadas3.src.UI.Fachada;
 import Camadas3.src.UI.IFachada;
 import Camadas3.src.Excecao.ExcecaoElementoInexistente;
-import POO.ContaNaoEncontradaException;
+
 
 import java.util.Scanner;
 
@@ -41,7 +41,7 @@ public class Main{
                         System.out.print("Insira o valor inicial: R$ ");
                         double saldo = sc.nextDouble();
 
-                        Fachada.inserirConta(new Conta(numeroConta,titular,saldo));
+                        Fachada.inserirConta(new Conta(titular,numeroConta,saldo));
 
                     }catch (Exception e){
                         System.out.println(e.getMessage());
@@ -60,10 +60,15 @@ public class Main{
                     break;
 
                 case 3:
+                try{
                     System.out.print("Digite o numero da conta que deseja alterar: ");
                     String numC = sc.next();
                     Fachada.alterarConta(numC);
+                }catch(Exception e){
+                    System.out.println("Erro ao alterar");
+                }
                     break;
+                    
                 case 4:
                     try {
                         System.out.print("Numero da Conta: ");
